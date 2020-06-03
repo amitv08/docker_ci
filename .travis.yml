@@ -1,0 +1,9 @@
+sudo: required
+services:
+        - docker
+
+before_install:
+        - docker build -t amitv08/docker_ci -f Dockerfile.dev .
+
+script:
+        - docker run amitv08/docker_ci npm run test -- --coverage
