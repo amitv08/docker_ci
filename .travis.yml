@@ -6,7 +6,6 @@ before_install:
         - docker build -t amitv08/docker_ci -f Dockerfile.dev .
 
 script:
-        - docker run amitv08/docker_ci npm run test -- --coverage
         - docker run -e CI=true amitv08/docker_ci npm run test
 
 language: generic 
